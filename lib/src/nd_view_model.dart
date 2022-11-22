@@ -5,19 +5,31 @@
 //  Created by Nguyen Duc Hiep on 01/12/2021.
 //
 
-import 'package:nd_mvvm/_globals.dart';
-import 'package:nd_mvvm/nd_view.dart';
+import 'package:flutter/foundation.dart';
+import 'package:nd_mvvm/nd_mvvm.dart';
+import 'package:nd_mvvm/src/logger.dart';
+import 'package:nd_mvvm/src/nd_view.dart';
 
 abstract class NDViewModel {
   /// The view. Don't use the setter unless you have got strong reason, use the
   /// ndConnect instead.
   NDView? view;
 
-  bool validateView(NDView view) => true;
-  void didSetViewFromOldView(NDView? oldView) {}
+  bool validateView(NDView view);
+  void didSetViewFromOldView(NDView? oldView);
 }
 
-abstract class NDGenericViewModel<V extends NDView> extends NDViewModel {
+mixin NDBasicViewModel<V extends NDView> implements NDViewModel {
+  @override
+  NDView? view;
+
+  @override
+  void didSetViewFromOldView(NDView? oldView) {}
+
+  @override
+  bool validateView(NDView view) => true;
+
+  @protected
   V? get rView => view as V?;
 }
 

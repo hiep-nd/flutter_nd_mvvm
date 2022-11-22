@@ -1,6 +1,6 @@
 name: nd_mvvm
 description: A library implement MVVM pattern.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/hiep-nd/flutter_nd_mvvm
 
 environment:

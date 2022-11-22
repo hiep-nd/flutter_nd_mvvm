@@ -6,10 +6,12 @@
 //
 
 import 'package:flutter/widgets.dart';
-import 'package:nd_mvvm/nd_mvvm.dart';
-import 'package:nd_mvvm/nd_view_model.dart';
+import 'package:nd_mvvm/src/nd_view_model.dart';
 
 abstract class NDStatefulWidget<T extends NDViewModel> extends StatefulWidget {
-  final T viewModel;
-  const NDStatefulWidget({Key? key, required this.viewModel}) : super(key: key);
+  final T? viewModel;
+  const NDStatefulWidget({
+    Key? key,
+    this.viewModel,
+  }) : super(key: key);
 }

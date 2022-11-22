@@ -6,12 +6,12 @@
 //
 
 import 'package:flutter/widgets.dart';
-import 'package:nd_mvvm/nd_stateful_widget.dart';
-import 'package:nd_mvvm/nd_view.dart';
-import 'package:nd_mvvm/nd_view_model.dart';
+import 'package:nd_mvvm/src/nd_stateful_widget.dart';
+import 'package:nd_mvvm/src/nd_view.dart';
+import 'package:nd_mvvm/src/nd_view_model.dart';
 
 abstract class NDState<W extends NDStatefulWidget<VM>, VM extends NDViewModel>
-    extends State<W> implements NDView {
+    extends State<W> with NDBasicView<VM> {
   @override
   void initState() {
     super.initState();
@@ -29,16 +29,4 @@ abstract class NDState<W extends NDStatefulWidget<VM>, VM extends NDViewModel>
     ndConnect(view: null, viewModel: viewModel);
     super.dispose();
   }
-
-  @override
-  NDViewModel? viewModel;
-
-  @override
-  void didSetViewModelFromOldViewModel(NDViewModel? oldViewModel) {}
-
-  @override
-  bool validateViewModel(NDViewModel viewModel) => true;
-
-  @protected
-  VM? get rViewModel => viewModel as VM?;
 }
