@@ -11,7 +11,7 @@ import 'package:nd_core_utils/nd_core_utils.dart';
 import 'package:nd_keys_observer/nd_keys_observer.dart';
 import 'package:nd_mvvm/nd_mvvm.dart';
 
-class NDViewModelOwnerStateExample extends NDStatefulWidget<ExampleViewModel> {
+class NDViewModelOwnerStateExample extends StatefulWidget {
   const NDViewModelOwnerStateExample({Key? key}) : super(key: key);
 
   @override

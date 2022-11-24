@@ -9,9 +9,9 @@ import 'package:flutter/widgets.dart';
 import 'package:nd_mvvm/src/nd_view_model.dart';
 
 abstract class NDStatefulWidget<T extends NDViewModel> extends StatefulWidget {
-  final T? viewModel;
+  final T viewModel;
   const NDStatefulWidget({
     Key? key,
-    this.viewModel,
+    required this.viewModel,
   }) : super(key: key);
 }
