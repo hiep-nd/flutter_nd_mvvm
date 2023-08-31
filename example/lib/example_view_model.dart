@@ -9,9 +9,7 @@ import 'package:nd_core_utils/nd_core_utils.dart';
 import 'package:nd_keys_observer/nd_keys_observer.dart';
 import 'package:nd_mvvm/nd_mvvm.dart';
 
-class ExampleViewModel extends NDViewModel
-    with NDBasicViewModel
-    implements NDDisposable {
+class ExampleViewModel extends NDViewModel implements NDDisposable {
   // NDDisposable
   @override
   void dispose() {

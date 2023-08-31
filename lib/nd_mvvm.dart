@@ -7,6 +7,7 @@
 
 library nd_mvvm;
 
+export 'package:nd_mvvm/src/nd_basic_view.dart';
 export 'package:nd_mvvm/src/nd_state.dart';
 export 'package:nd_mvvm/src/nd_stateful_widget.dart';
 export 'package:nd_mvvm/src/nd_view.dart';

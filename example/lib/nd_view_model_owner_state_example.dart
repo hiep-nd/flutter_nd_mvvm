@@ -30,14 +30,14 @@ class _NDViewModelOwnerStateExampleState extends NDViewModelOwnerState<
   void didSetViewModelFromOldViewModel(NDViewModel? oldViewModel) {
     super.didSetViewModelFromOldViewModel(oldViewModel);
     _aController.bindWithTextGetter(
-      subject: rViewModel?.subject,
+      subject: viewModel?.subject,
       keys: const ['a'],
-      textGetter: () => rViewModel?.a ?? '',
+      textGetter: () => viewModel?.a ?? '',
     );
     _bController.bindWithTextGetter(
-      subject: rViewModel?.subject,
+      subject: viewModel?.subject,
       keys: const ['b'],
-      textGetter: () => rViewModel?.b ?? '',
+      textGetter: () => viewModel?.b ?? '',
     );
   }
 
@@ -56,22 +56,22 @@ class _NDViewModelOwnerStateExampleState extends NDViewModelOwnerState<
           Flexible(
             child: TextField(
               controller: _aController,
-              onChanged: rViewModel?.didChangeA,
+              onChanged: viewModel?.didChangeA,
             ),
           ),
           const Text(' + '),
           Flexible(
             child: TextField(
               controller: _bController,
-              onChanged: rViewModel?.didChangeB,
+              onChanged: viewModel?.didChangeB,
             ),
           ),
           const Text(' = '),
           Flexible(
             child: NDObserver(
-              subject: rViewModel?.subject,
+              subject: viewModel?.subject,
               keys: const ['s'],
-              builder0: () => Text(rViewModel?.s ?? ''),
+              builder0: () => Text(viewModel?.s ?? ''),
             ),
           ),
         ],

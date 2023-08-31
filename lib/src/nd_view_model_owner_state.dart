@@ -6,7 +6,7 @@
 //
 
 import 'package:flutter/widgets.dart';
-import 'package:nd_mvvm/src/nd_view.dart';
+import 'package:nd_mvvm/src/nd_basic_view.dart';
 import 'package:nd_mvvm/src/nd_view_model.dart';
 
 abstract class NDViewModelOwnerState<W extends StatefulWidget,
@@ -15,12 +15,12 @@ abstract class NDViewModelOwnerState<W extends StatefulWidget,
   @override
   void initState() {
     super.initState();
-    ndConnect(view: this, viewModel: _ownViewModel);
+    viewModel = _ownViewModel;
   }
 
   @override
   void dispose() {
-    ndConnect(view: this, viewModel: null);
+    viewModel = null;
     disposeViewModel(_ownViewModel);
     super.dispose();
   }

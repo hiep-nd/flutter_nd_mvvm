@@ -7,3 +7,8 @@
 
 ## 1.0.1
 * Updated ```NDStatefulWidget```
+
+## 2.0.0
+* Removed ```ndConnect```
+* Removed connection from VM to V
+* Added ```NDViewModelOwnerState```
